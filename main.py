@@ -18,6 +18,7 @@ set_site_information(
     ],
     links=[]
 )
+@dataclass
 class DesignTask:
     task_title: str
     task_description: str
@@ -92,7 +93,7 @@ def project_page(state: State)-> Page:
     return Page(state, [
         Header("My Project"),
         Text("Project Name: " + state.project_name),
-        Text("Project Goal: " +state.project_goal),
+        Text("Project Goal: " + state.project_goal),
         Button("Home", index)
     ])
 
