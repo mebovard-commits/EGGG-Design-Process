@@ -9,7 +9,7 @@ set_website_title("Your Drafter Website")
 set_website_framed(False)
 
 
-SiteInformation(author='Madeline Bovard', description='This website is supposed to help EGGG students work through design processes', sources=list(), planning=list(), links=list())
+SiteInformation(author='Madeline Bovard', description='This website is supposed to help EGGG students work through design processes', sources=list(), planning=list(Copy of CS1 Final Project 1: Design, Copy of CS1 Final Project 0: Pick a Problem), links=list())
 
 @dataclass
 class DesignTask:
