@@ -47,7 +47,7 @@ def index(state: State)-> Page:
 def tasks_page(state: State) -> Page:
     content = [
         Header("My Project Tasks"),
-        Button("Add New Task", task_input _page)
+        Button("Add New Task", task_input_page)
         ]
     for index, task in enumerate(state.task):
         content.append(Header(task.task_title))
