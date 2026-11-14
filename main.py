@@ -38,7 +38,7 @@ def index(state: State)-> Page:
     return Page(state,[
         Header("Engineering Design Organizer"),
         Text("Welcome to Your Design Organizer!"),
-        Button("My Project", project_page),
+        Button("My Project", project_input_page),
         Button("View Tasks", tasks_page),
         Button("View Notes", notes_page),
         Button("Design Layers", layers_page)
@@ -94,8 +94,26 @@ def project_page(state: State)-> Page:
         Header("My Project"),
         Text("Project Name: " + state.project_name),
         Text("Project Goal: " + state.project_goal),
+        Button("Edit project" project_input_page),
         Button("Home", index)
     ])
+
+@route
+def project_input_page(state: State)-> Page:
+    return Page(state, [
+        Header("Set Up Your Project"),
+        Text("Enter Your project Information Below"),
+        TextBox("Project Name", "project_name"),
+        TextArea("Project Goal", "project_goal"),
+        Button("Save project", save_project)
+    ])
+
+@route
+def save_project(state: State, project_name: str, project_goal: str) -> Page:
+    state.project_name = project_name
+    state.project_goal = project_goal
+    return project_page(state)
+                     
 
 @route
 def layers_page(state: State)-> Page:
