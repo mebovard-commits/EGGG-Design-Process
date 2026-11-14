@@ -94,7 +94,7 @@ def project_page(state: State)-> Page:
         Header("My Project"),
         Text("Project Name: " + state.project_name),
         Text("Project Goal: " + state.project_goal),
-        Button("Edit project" project_input_page),
+        Button("Edit project", project_input_page),
         Button("Home", index)
     ])
 
