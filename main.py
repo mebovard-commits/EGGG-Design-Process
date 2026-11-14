@@ -49,7 +49,7 @@ def tasks_page(state: State) -> Page:
         Header("My Project Tasks"),
         Button("Add New Task", task_input_page),
         ]
-    for index, task in enumerate(state.task):
+    for task_number, task in enumerate(state.task):
         content.append(Header(task.task_title))
         content.append(Text(task.task_description))
         content.append(Text("Layer: " + task.task_layer))
@@ -61,7 +61,7 @@ def tasks_page(state: State) -> Page:
             content.append(
                 Button("Mark Complete",
                         "complete_task",
-                        [Argument("task_index", index)])
+                        [Argument("task_index", task_number)])
             )
     content.append(Button("Home", index))
     return Page(state, content)
