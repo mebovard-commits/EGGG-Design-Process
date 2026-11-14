@@ -142,13 +142,12 @@ def notes_page(state:State) ->Page:
 def task_input_page(state: State) -> Page:
     return Page(state, [
         Header("Add a New Task"),
-        TextBox("Task title", "title"),
-        TextArea("Task Description", "description"),
-        SelectBox("Design Layer",
+        TextBox("title", "Task Title"),
+        TextArea("description", "Task Description"),
+        SelectBox("layer", "Design layer"
                   ["Identify Problem", "Research",
                    "Design", "prototype",
-                   "Evaluate"],
-                  "layer"),
+                   "Evaluate"])
         Button("Save Task", add_task)
     ])
 
