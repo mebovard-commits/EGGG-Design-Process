@@ -60,7 +60,7 @@ def tasks_page(state: State) -> Page:
             content.append(Text("Not Completed"))
             content.append(
                 Button("Mark Complete",
-                        "complete_task",
+                        complete_task,
                         [Argument("task_index", task_number)])
             )
     content.append(Button("Home", index))
