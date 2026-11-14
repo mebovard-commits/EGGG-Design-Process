@@ -34,7 +34,7 @@ class State:
     
 
 @route
-def index(state: State)-> Page:
+def home_page(state: State)-> Page:
     return Page(state,[
         Header("Engineering Design Organizer"),
         Text("Welcome to Your Design Organizer!"),
@@ -61,9 +61,9 @@ def tasks_page(state: State) -> Page:
             content.append(
                 Button("Mark Complete",
                         "complete_task",
-                        [Argument("task_index", task_number)])
+                        [Argument("task_home_page", task_number)])
             )
-    content.append(Button("Home", index))
+    content.append(Button("Home", home_page))
     return Page(state, content)
     
 @route
@@ -80,8 +80,8 @@ def add_task(state: State, title: str, description: str, layer: str)-> Page:
     return tasks_page(state)
 
 @route
-def complete_task(state: State, task_index: int) -> Page:
-    state.task[task_index].completed = True
+def complete_task(state: State, task_home_page: int) -> Page:
+    state.task[task_home_page].completed = True
     return tasks_page(state)
 
 @route
@@ -97,7 +97,7 @@ def project_page(state: State)-> Page:
         Text("Project Name: " + state.project_name),
         Text("Project Goal: " + state.project_goal),
         Button("Edit project", project_input_page),
-        Button("Home", index)
+        Button("Home", home_page)
     ])
 
 @route
@@ -126,7 +126,7 @@ def layers_page(state: State)-> Page:
         Text("3. Design"),
         Text("4. prototype"),
         Text("5. Evaluate"),
-        Button("Home", index)
+        Button("Home", home_page)
     ])
 
 @route
@@ -137,7 +137,7 @@ def notes_page(state:State) ->Page:
     ]
     for note in state.notes:
         content.append(Text(note))
-    content.append(Button("Home", index))
+    content.append(Button("Home", home_page))
     return Page(state, content)
 
 @route
