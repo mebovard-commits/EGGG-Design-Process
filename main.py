@@ -58,9 +58,11 @@ def tasks_page(state: State) -> Page:
             content.append(Text("Completed"))
         else:
             content.append(Text("Not Completed"))
-            content.append(Button("Mark Complete",
-                                  complete_task,
-                                  [Argument("task_index", index)]))
+            content.append(
+                Button("Mark Complete",
+                        "complete_task",
+                        [Argument("task_index", index)])
+            )
             
     return Page(state, content)
     
