@@ -147,7 +147,8 @@ def task_input_page(state: State) -> Page:
         SelectBox("layer",
                   ["Identify Problem", "Research",
                    "Design", "prototype",
-                   "Evaluate"]),
+                   "Evaluate"],
+                 "Identify Problem"),
         Button("Save Task", add_task)
     ])
 
