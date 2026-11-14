@@ -103,8 +103,8 @@ def project_input_page(state: State)-> Page:
     return Page(state, [
         Header("Set Up Your Project"),
         Text("Enter Your project Information Below"),
-        TextBox("project_name", "project_name"),
-        TextArea("project_goal", "project_goal"),
+        TextBox("project_name", "Project Name"),
+        TextArea("project_goal", "Project Goal"),
         Button("Save project", save_project)
     ])
 
